@@ -35,7 +35,7 @@ defmodule ReadRepos do
       end
       if unquote(count) > 1 do
         def slave do
-          at = Enum.random(0..unquote(Macro.escape(count)) - 1)
+          at = Enum.random(1..unquote(Macro.escape(count)) - 1)
           Enum.fetch!(slaves, at)
         end
       else
